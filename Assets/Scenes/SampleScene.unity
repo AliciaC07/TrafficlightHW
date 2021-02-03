@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 706874772}
   - component: {fileID: 706874771}
   - component: {fileID: 706874770}
+  - component: {fileID: 706874773}
   m_Layer: 0
   m_Name: semaforo_0 (3)
   m_TagString: Untagged
@@ -444,6 +445,7 @@ MonoBehaviour:
     type: 3}
   spriteRenderer: {fileID: 706874771}
   timer: 60
+  stop: 0
 --- !u!212 &706874771
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -502,13 +504,39 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706874769}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.11, y: -1.05, z: 0}
   m_LocalScale: {x: 0.350545, y: 0.3327856, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &706874773
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706874769}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 3.22}
+    newSize: {x: 1.37, y: 3.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 3.22}
+  m_EdgeRadius: 0
 --- !u!1 &725244392
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +573,7 @@ MonoBehaviour:
   - {fileID: 3955431184324432459, guid: ddaeed145d6917b45ab9ff263b9382c2, type: 3}
   timer: 6
   index: 1
+  trafficLight: {fileID: 1274691508}
 --- !u!61 &725244394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -863,6 +892,7 @@ GameObject:
   - component: {fileID: 988410622}
   - component: {fileID: 988410621}
   - component: {fileID: 988410620}
+  - component: {fileID: 988410623}
   m_Layer: 0
   m_Name: semaforo_0 (2)
   m_TagString: Untagged
@@ -890,6 +920,7 @@ MonoBehaviour:
     type: 3}
   spriteRenderer: {fileID: 988410621}
   timer: 60
+  stop: 0
 --- !u!212 &988410621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -948,13 +979,39 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988410619}
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.69, y: 1.32, z: 0}
   m_LocalScale: {x: 0.350545, y: 0.3327856, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &988410623
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988410619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 3.22}
+    newSize: {x: 1.37, y: 3.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 3.22}
+  m_EdgeRadius: 0
 --- !u!1 &1005098222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1220,7 @@ GameObject:
   - component: {fileID: 1274691511}
   - component: {fileID: 1274691510}
   - component: {fileID: 1274691509}
+  - component: {fileID: 1274691512}
   m_Layer: 0
   m_Name: semaforo_0 (1)
   m_TagString: Untagged
@@ -1190,6 +1248,7 @@ MonoBehaviour:
     type: 3}
   spriteRenderer: {fileID: 1274691510}
   timer: 30
+  stop: 0
 --- !u!212 &1274691510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1255,6 +1314,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1274691512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274691508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 3.22}
+    newSize: {x: 1.37, y: 3.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 3.22}
+  m_EdgeRadius: 0
 --- !u!1 &1333598478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1376,7 @@ MonoBehaviour:
   - {fileID: 3955431184324432459, guid: ddaeed145d6917b45ab9ff263b9382c2, type: 3}
   timer: 6
   index: 0
+  trafficLight: {fileID: 706874769}
 --- !u!61 &1333598480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1363,6 +1449,7 @@ GameObject:
   - component: {fileID: 1342715836}
   - component: {fileID: 1342715835}
   - component: {fileID: 1342715834}
+  - component: {fileID: 1342715837}
   m_Layer: 0
   m_Name: semaforo_0
   m_TagString: Untagged
@@ -1390,6 +1477,7 @@ MonoBehaviour:
     type: 3}
   spriteRenderer: {fileID: 1342715835}
   timer: 30
+  stop: 0
 --- !u!212 &1342715835
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1455,6 +1543,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!61 &1342715837
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342715833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 3.22}
+    newSize: {x: 1.37, y: 3.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 3.22}
+  m_EdgeRadius: 0
 --- !u!1 &1407922771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,8 +1767,9 @@ MonoBehaviour:
   car:
   - {fileID: 2835582843886034695, guid: 83bcd6acad34d0a4a8196d645aa1621b, type: 3}
   - {fileID: 3955431184324432459, guid: ddaeed145d6917b45ab9ff263b9382c2, type: 3}
-  timer: 0
+  timer: 6
   index: 0
+  trafficLight: {fileID: 988410619}
 --- !u!61 &1802152170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1916,6 +2031,7 @@ MonoBehaviour:
   - {fileID: 3955431184324432459, guid: ddaeed145d6917b45ab9ff263b9382c2, type: 3}
   timer: 6
   index: 0
+  trafficLight: {fileID: 1342715833}
 --- !u!61 &2128361734
 BoxCollider2D:
   m_ObjectHideFlags: 0
