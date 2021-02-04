@@ -8,30 +8,30 @@ public class TrafficLight : MonoBehaviour
     public Sprite sprite_redlight;
     public Sprite sprite_greenlight;
     public SpriteRenderer spriteRenderer;
-    public float timer = 60;
+    public float timer = 40;
     public bool stop = false;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer >= 30)
+        if (timer >= 20)
         {
             spriteRenderer.sprite = sprite_redlight;
             stop = true;
 
         }
-        else if (timer >= 5)
+        else if (timer >= 2.5f)
         {
             spriteRenderer.sprite = sprite_greenlight;
             stop = false;
 
         }
-        else if (timer >= 0 )
+        else if (timer >= 0)
         {
             spriteRenderer.sprite = sprite_yellowlight;
             stop = true;
@@ -39,7 +39,7 @@ public class TrafficLight : MonoBehaviour
         }
         if (timer <= 0)
         {
-            timer = 60;
+            timer = 40;
         }
         timer -= Time.deltaTime;
 
@@ -50,10 +50,10 @@ public class TrafficLight : MonoBehaviour
         {
             collision.gameObject.GetComponent<CarMovement>().velocity = 0;
         }
-        else
-        {
-            collision.gameObject.GetComponent<CarMovement>().velocity = 5;
-        }
+        //else
+        //{
+        //    collision.gameObject.GetComponent<CarMovement>().velocity = 5;
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)

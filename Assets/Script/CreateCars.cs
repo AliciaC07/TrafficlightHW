@@ -8,7 +8,7 @@ public class CreateCars : MonoBehaviour
     public float timer = 2;
     public int index;
     public GameObject trafficLight;
-    private int countCar = 3;
+    private int countCar = 1;
 
     void Start()
     {
@@ -19,12 +19,13 @@ public class CreateCars : MonoBehaviour
 
     }
 
-    
+
     void Update()
     {
+        
         if (!trafficLight.GetComponent<TrafficLight>().stop)
         {
-            countCar = 3;
+            countCar = 1;
             timer -= 1 * Time.deltaTime;
             if (timer <= 0)
             {
@@ -44,6 +45,7 @@ public class CreateCars : MonoBehaviour
         }
         else
         {
+            //Debug.Log(countCar);
             if (countCar > 0)
             {
                 timer -= 1 * Time.deltaTime;
@@ -62,13 +64,13 @@ public class CreateCars : MonoBehaviour
                     timer = 2;
                     countCar--;
                 }
-                
-                
+
+
 
             }
         }
 
-       
+
 
     }
 }

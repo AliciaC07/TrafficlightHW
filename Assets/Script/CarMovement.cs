@@ -7,14 +7,15 @@ public class CarMovement : MonoBehaviour
     public float velocity = 0;
     private bool visible = false;
     public GameObject trafficLight;
+    private GameObject car = null;
 
     void Start()
     {
         gameObject.transform.Translate(new Vector2(0, -velocity * Time.deltaTime));
-        
+
     }
 
-    
+
     void Update()
     {
         gameObject.transform.Translate(new Vector2(0, -velocity * Time.deltaTime));
@@ -28,7 +29,7 @@ public class CarMovement : MonoBehaviour
             GameObject.Destroy(gameObject);
 
         }
-        
+
     }
 
     private void OnBecameVisible()
@@ -38,11 +39,21 @@ public class CarMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        velocity = 0;
+        
+        if (car == null)
+        {
+            velocity = 0;
+            car = collision.gameObject;
+        }
+        
     }
 
-    private void nCollisionExit2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        velocity = 5;
+        if (collision.gameObject == car)
+        {
+            velocity = 5;
+        }
+        
     }
 }
