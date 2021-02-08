@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class TrafficLight : MonoBehaviour
 {
@@ -8,10 +8,12 @@ public class TrafficLight : MonoBehaviour
     public Sprite sprite_redlight;
     public Sprite sprite_greenlight;
     public SpriteRenderer spriteRenderer;
-    //public bool yellowLigth = false;
+    public GameObject intersection;
+    public bool yellowLigth = false;
     //public float timer = 40;
     public bool trafficState = false; /// true-green false-red
     public bool stop = false;
+
 
     void Start()
     {
@@ -53,35 +55,37 @@ public class TrafficLight : MonoBehaviour
         {
             if (!trafficState)
             {
-                //yellowLigth = false;
+                yellowLigth = false;
                 spriteRenderer.sprite = sprite_redlight;
                 stop = true;
-                yield return new WaitForSeconds(20);
+                yield return new WaitForSeconds(13);
                 //stop = false;
                 spriteRenderer.sprite = sprite_greenlight;
                 stop = false;
+                //IntersectionControl();
                 yield return new WaitForSeconds(10);
                 //stop = true;
                 spriteRenderer.sprite = sprite_yellowlight;
-                stop = true;
-                //yellowLigth = true;
+                stop = false;
+                yellowLigth = true;
                 yield return new WaitForSeconds(3);
                 
 
             }
             else
             {
-                //yellowLigth = false;
+                yellowLigth = false;
                 spriteRenderer.sprite = sprite_greenlight;
                 stop = false;
+                //IntersectionControl();
                 yield return new WaitForSeconds(10);
                 spriteRenderer.sprite = sprite_yellowlight;
-                stop = true;
-                //yellowLigth = true;
+                stop = false;
+                yellowLigth = true;
                 yield return new WaitForSeconds(3);
                 spriteRenderer.sprite = sprite_redlight;
                 stop = true;
-                yield return new WaitForSeconds(20);
+                yield return new WaitForSeconds(13);
                 
 
             }
@@ -118,12 +122,23 @@ public class TrafficLight : MonoBehaviour
     {
         if (!stop)
         {
-            collision.gameObject.GetComponent<CarMovement>().velocity = 5;
+            IntersectionControl(collision);
+            //collision.gameObject.GetComponent<CarMovement>().velocity = 5;
         }
         ///se roba la luz en amarillo
         //if (spriteRenderer.sprite == sprite_yellowlight)
         //{
         //    collision.gameObject.GetComponent<CarMovement>().velocity = 7;
         //}
+    }
+
+    async void IntersectionControl(Collider2D collider)
+    {
+        while (intersection.GetComponent<Intersection>().carsInIntersection > 0)
+        {
+            await Task.Yield();
+        }
+        collider.gameObject.GetComponent<CarMovement>().velocity = 5;
+
     }
 }

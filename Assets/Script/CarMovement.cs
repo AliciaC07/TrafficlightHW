@@ -15,6 +15,10 @@ public class CarMovement : MonoBehaviour
         {
             velocity = 3;
         }
+        else if (trafficLight.GetComponent<TrafficLight>().yellowLigth == true)
+        {
+            velocity = 8;
+        }
         else
         {
             velocity = 5;
