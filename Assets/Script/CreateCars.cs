@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class CreateCars : MonoBehaviour
 {
-    public GameObject[] car;
-    public float timer = 2;
+    public GameObject[] cars;
+    public float timer = 3;
     public int index;
     public GameObject trafficLight;
-    private int countCar = 1;
+    public GameObject car;
+    private int countCar = 3;
 
     void Start()
     {
 
         index = Random.Range(0, 1);
-        Instantiate(car[index], gameObject.transform);
+        car = Instantiate(cars[index], gameObject.transform);
+        car.GetComponent<CarMovement>().trafficLight = trafficLight;
 
 
     }
@@ -25,8 +27,9 @@ public class CreateCars : MonoBehaviour
         
         if (!trafficLight.GetComponent<TrafficLight>().stop)
         {
-            countCar = 1;
+            
             timer -= 1 * Time.deltaTime;
+            countCar = 3;
             if (timer <= 0)
             {
                 if (Random.Range(0, 10) >= 5)
@@ -38,14 +41,17 @@ public class CreateCars : MonoBehaviour
                     index = 0;
                 }
 
-                Instantiate(car[index], gameObject.transform);
-                timer = 2;
+                car = Instantiate(cars[index], gameObject.transform);
+                car.GetComponent<CarMovement>().trafficLight = trafficLight;
+                timer = 4;
             }
+            
+
 
         }
         else
         {
-            //Debug.Log(countCar);
+            
             if (countCar > 0)
             {
                 timer -= 1 * Time.deltaTime;
@@ -60,17 +66,16 @@ public class CreateCars : MonoBehaviour
                         index = 0;
                     }
 
-                    Instantiate(car[index], gameObject.transform);
-                    timer = 2;
+                    car = Instantiate(cars[index], gameObject.transform);
+                    car.GetComponent<CarMovement>().trafficLight = trafficLight;
+                    timer = 4;
                     countCar--;
+                    
                 }
-
-
+                
 
             }
         }
-
-
-
+        
     }
 }

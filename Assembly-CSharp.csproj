@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\CarMovement.cs" />
+    <Compile Include="Assets\Script\Controler.cs" />
     <Compile Include="Assets\Script\CreateCars.cs" />
     <Compile Include="Assets\Script\TrafficLight.cs" />
     <Reference Include="UnityEngine">

@@ -55,12 +55,25 @@ public class TrafficLight : MonoBehaviour
         //    collision.gameObject.GetComponent<CarMovement>().velocity = 5;
         //}
     }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (spriteRenderer.sprite == sprite_redlight)
+    //    {
+    //        collision.gameObject.GetComponent<CarMovement>().velocity = 0.5f;
+    //    }
+    //}
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (!stop)
         {
             collision.gameObject.GetComponent<CarMovement>().velocity = 5;
+        }
+
+        if (spriteRenderer.sprite == sprite_yellowlight)
+        {
+            collision.gameObject.GetComponent<CarMovement>().velocity = 7;
         }
     }
 }

@@ -11,6 +11,15 @@ public class CarMovement : MonoBehaviour
 
     void Start()
     {
+        if (trafficLight.GetComponent<TrafficLight>().spriteRenderer == trafficLight.GetComponent<TrafficLight>().sprite_redlight)
+        {
+            velocity = 1;
+
+        }
+        else if (trafficLight.GetComponent<TrafficLight>().spriteRenderer == trafficLight.GetComponent<TrafficLight>().sprite_greenlight)
+        {
+            velocity = 5;
+        }
         gameObject.transform.Translate(new Vector2(0, -velocity * Time.deltaTime));
 
     }
@@ -18,7 +27,18 @@ public class CarMovement : MonoBehaviour
 
     void Update()
     {
+        if (trafficLight.GetComponent<TrafficLight>().spriteRenderer == trafficLight.GetComponent<TrafficLight>().sprite_redlight)
+        {
+            velocity = 1;
+
+        }
+        else if (trafficLight.GetComponent<TrafficLight>().spriteRenderer == trafficLight.GetComponent<TrafficLight>().sprite_greenlight)
+        {
+            velocity = 5;
+        }
         gameObject.transform.Translate(new Vector2(0, -velocity * Time.deltaTime));
+
+        
 
     }
 
