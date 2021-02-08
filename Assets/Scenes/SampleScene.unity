@@ -396,7 +396,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1671084752}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 4
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -631,7 +631,8 @@ MonoBehaviour:
   sprite_greenlight: {fileID: -3508431804354449404, guid: 6226c5d0713e17a49846b0a803a75790,
     type: 3}
   spriteRenderer: {fileID: 706874771}
-  timer: 20
+  yellowLigth: 0
+  trafficState: 1
   stop: 0
 --- !u!212 &706874771
 SpriteRenderer:
@@ -1203,7 +1204,8 @@ MonoBehaviour:
   sprite_greenlight: {fileID: -3508431804354449404, guid: 6226c5d0713e17a49846b0a803a75790,
     type: 3}
   spriteRenderer: {fileID: 988410621}
-  timer: 20
+  yellowLigth: 0
+  trafficState: 1
   stop: 0
 --- !u!212 &988410621
 SpriteRenderer:
@@ -1800,7 +1802,8 @@ MonoBehaviour:
   sprite_greenlight: {fileID: -3508431804354449404, guid: 6226c5d0713e17a49846b0a803a75790,
     type: 3}
   spriteRenderer: {fileID: 1274691510}
-  timer: 40
+  yellowLigth: 0
+  trafficState: 0
   stop: 0
 --- !u!212 &1274691510
 SpriteRenderer:
@@ -2052,7 +2055,8 @@ MonoBehaviour:
   sprite_greenlight: {fileID: -3508431804354449404, guid: 6226c5d0713e17a49846b0a803a75790,
     type: 3}
   spriteRenderer: {fileID: 1342715835}
-  timer: 40
+  yellowLigth: 0
+  trafficState: 0
   stop: 0
 --- !u!212 &1342715835
 SpriteRenderer:
