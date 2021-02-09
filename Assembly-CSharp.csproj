@@ -64,7 +64,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\ArrayList.cs" />
     <Compile Include="Assets\Script\CarMovement.cs" />
     <Compile Include="Assets\Script\Controler.cs" />
     <Compile Include="Assets\Script\CreateCars.cs" />

@@ -18,11 +18,7 @@ public class Controler : MonoBehaviour
         
     }
 
-    //private void FixedUpdate()
-    //{
-    //    Time.timeScale = time;
-
-    //}
+    
     public void OnvalueChanged(float value)
     {
         time = value;

@@ -15,20 +15,16 @@ public class CarMovement : MonoBehaviour
         {
             velocity = 3;
         }
-        else if (trafficLight.GetComponent<TrafficLight>().yellowLigth == true)
-        {
-            velocity = 8;
-        }
+        //else if (trafficLight.GetComponent<TrafficLight>().yellowLigth == true)
+        //{
+        //    velocity = 7;
+        //}
         else
         {
             velocity = 5;
         }
         gameObject.transform.Translate(new Vector2(0, -velocity * Time.deltaTime));
-        //else if (trafficLight.GetComponent<TrafficLight>().yellowLigth == true)
-        //{
-        //    Debug.Log("ENtrodx");
-        //    velocity = 8;
-        //}
+        
 
     }
 

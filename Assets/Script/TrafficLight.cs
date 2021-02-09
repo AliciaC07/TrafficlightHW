@@ -59,15 +59,15 @@ public class TrafficLight : MonoBehaviour
                 spriteRenderer.sprite = sprite_redlight;
                 stop = true;
                 yield return new WaitForSeconds(13);
-                //stop = false;
+                
                 spriteRenderer.sprite = sprite_greenlight;
                 stop = false;
-                //IntersectionControl();
+               
                 yield return new WaitForSeconds(10);
-                //stop = true;
+               
                 spriteRenderer.sprite = sprite_yellowlight;
-                stop = false;
                 yellowLigth = true;
+                stop = false;
                 yield return new WaitForSeconds(3);
                 
 
@@ -80,8 +80,8 @@ public class TrafficLight : MonoBehaviour
                 //IntersectionControl();
                 yield return new WaitForSeconds(10);
                 spriteRenderer.sprite = sprite_yellowlight;
-                stop = false;
                 yellowLigth = true;
+                stop = false;                
                 yield return new WaitForSeconds(3);
                 spriteRenderer.sprite = sprite_redlight;
                 stop = true;
@@ -126,10 +126,10 @@ public class TrafficLight : MonoBehaviour
             //collision.gameObject.GetComponent<CarMovement>().velocity = 5;
         }
         ///se roba la luz en amarillo
-        //if (spriteRenderer.sprite == sprite_yellowlight)
-        //{
-        //    collision.gameObject.GetComponent<CarMovement>().velocity = 7;
-        //}
+        if (spriteRenderer.sprite == sprite_yellowlight)
+        {
+            collision.gameObject.GetComponent<CarMovement>().velocity = 7;
+        }
     }
 
     async void IntersectionControl(Collider2D collider)

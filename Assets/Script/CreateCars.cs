@@ -9,7 +9,7 @@ public class CreateCars : MonoBehaviour
     public int index;
     public GameObject trafficLight;
     public GameObject car;
-    private int countCar = 3;
+    private int countCar = 2;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class CreateCars : MonoBehaviour
         {
             
             timer -= 1 * Time.deltaTime;
-            countCar = 3;
+            countCar = 2;
             if (timer <= 0)
             {
                 if (Random.Range(0, 10) >= 5)
@@ -43,7 +43,7 @@ public class CreateCars : MonoBehaviour
 
                 car = Instantiate(cars[index], gameObject.transform);
                 car.GetComponent<CarMovement>().trafficLight = trafficLight;
-                timer = 4;
+                timer = 3;
             }
             
 
@@ -68,7 +68,7 @@ public class CreateCars : MonoBehaviour
 
                     car = Instantiate(cars[index], gameObject.transform);
                     car.GetComponent<CarMovement>().trafficLight = trafficLight;
-                    timer = 4;
+                    timer = 3;
                     countCar--;
                     
                 }
